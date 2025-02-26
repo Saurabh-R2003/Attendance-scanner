@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Dashboard</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; text-align: left; border: 1px solid #ddd; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h2>Attendance Records</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Barcode</th>
+            <th>Time In</th>
+            <th>Time Out</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ record.id }}</td>
+            <td>{{ record.barcode }}</td>
+            <td>{{ record.time_in }}</td>
+            <td>{{ record.time_out }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
